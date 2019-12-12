@@ -1,0 +1,19 @@
+.addis-btn {
+  background-color: $white;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  padding: $spacer / 2 $spacer;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $primary;
+  }
+
+  &._primary {
+    background-color: $primary;
+
+    &:hover {
+      background-color: $white;
+    }
+  }
+}

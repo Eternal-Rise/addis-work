@@ -1,1 +1,46 @@
+// breakpoints
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1600px;
+$xxxl: 2400px;
+
+
 // reseting default bootstrap variables
+
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+
+$white:    #fff;
+$gray-200: #E8EAEE;
+$gray-900: #041427;
+$black:    #000;
+
+$red:     #F26463;
+
+$primary:       $red;
+$light:         $gray-200;
+$dark:          $gray-900;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: 'Montserrat', Arial, sans-serif;
+
+$font-size-base:  1rem; // Assumes the browser default, typically `16px`
+$font-size-lg:    $font-size-base * 1.25;
+$font-size-sm:    $font-size-base * .875;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 20px;

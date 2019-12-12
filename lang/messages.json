@@ -1,5 +1,23 @@
 {
+  "am": {
+
+  },
   "en": {
+    "LABEL_CONTACT_LOCATION": "22 Mazoria, Golagul Tower",
+    "LABEL_CONTACT_OFFICE": "7th floor, #705",
+    "LABEL_CONTACT_PHONE_1": "+251 116 608171",
+    "LABEL_CONTACT_PHONE_2": "+251 911 557216",
+    "LABEL_CONTACT_PHONE_3": "+251 911 557216",
+    "LABEL_CONTACT_US": "Contact us",
+    "LABEL_SIGN_UP": "sign up"
+  },
+  "om": {
+
+  },
+  "ti": {
+
+  },
+  "so": {
 
   }
 }

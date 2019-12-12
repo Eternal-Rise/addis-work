@@ -4,9 +4,9 @@ import { NuxtVueI18n } from 'nuxt-i18n';
 import AllOptionsInterface = NuxtVueI18n.Options.AllOptionsInterface;
 import getLanguages from '../lang';
 
-const i18n: () => Promise<AllOptionsInterface> = async (): Promise<
+const i18n: () => Promise<
   AllOptionsInterface
-> => {
+> = async (): Promise<AllOptionsInterface> => {
   const data = await getLanguages();
 
   return {
