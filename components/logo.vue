@@ -17,6 +17,7 @@ export default class Logo extends Vue {}
 <style lang="scss" scoped>
 .logo {
   &__alt {
+    font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
   }

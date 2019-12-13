@@ -40,8 +40,8 @@ export default class LayoutHeader extends Vue {}
     margin: 0 0 0 auto;
   }
 
-  &__lang-switcher {
-    margin: 0 20px 0 0;
-  }
+  // &__lang-switcher {
+  //   margin: 0 20px 0 0;
+  // }
 }
 </style>

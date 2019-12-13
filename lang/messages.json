@@ -9,7 +9,17 @@
     "LABEL_CONTACT_PHONE_2": "+251 911 557216",
     "LABEL_CONTACT_PHONE_3": "+251 911 557216",
     "LABEL_CONTACT_US": "Contact us",
-    "LABEL_SIGN_UP": "sign up"
+    "LABEL_REMEMBER_ME": "Remember me",
+    "LABEL_PASSWORD_FORGOT": "Forgot password?",
+    "LABEL_SIGN_IN": "sign in",
+    "LABEL_SIGN_UP": "sign up",
+
+    "MESSAGE_INFO_LANDING_SIGN_IN": "Get notified by SMS on your preferred job categories. No need to go out looking for jobs, the jobs come looking for you on your mobile. You can even apply right away by SMS",
+
+    "PLACEHOLDER_PASSWORD": "Password",
+    "PLACEHOLDER_PHONE": "Phone",
+
+    "TITLE_LANDING_SIGN_IN": "The right vacancies by SMS!"
   },
   "om": {
 

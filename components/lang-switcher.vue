@@ -1,19 +1,28 @@
 <template>
-  <b-dropdown variant="link" class="switcher">
+  <b-dropdown class="switcher" no-caret variant="link">
     <template slot="button-content">
-      <span class="switcher-label _full">
-        {{
-          typeof currentLocale === 'string'
-            ? currentLocale
-            : currentLocale.nativeName
-        }}
-      </span>
-      <span class="switcher-label _short">
-        {{
-          typeof currentLocale === 'string' ? currentLocale : currentLocale.code
-        }}
-      </span>
-      <!-- <a-icon type="down" class="switcher-icon _down" /> -->
+      <div class="d-flex align-items-center">
+        <span class="switcher__label _full">
+          {{
+            typeof currentLocale === 'string'
+              ? currentLocale
+              : currentLocale.nativeName
+          }}
+        </span>
+        <span class="switcher__label _short">
+          {{
+            typeof currentLocale === 'string'
+              ? currentLocale
+              : currentLocale.code
+          }}
+        </span>
+        <custom-svg-icon
+          :height="7"
+          :width="11"
+          class="switcher__icon"
+          type="dropdown-arrow"
+        />
+      </div>
     </template>
     <b-dropdown-item
       v-for="lang in locales"
@@ -27,8 +36,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import CustomSvgIcon from '~/components/custom-svg-icon.vue';
 
-@Component
+@Component({
+  components: {
+    CustomSvgIcon,
+  },
+})
 export default class LanguageSwitcher extends Vue {
   public setLanguage(key: string) {
     this.$i18n.setLocale(key);
@@ -56,7 +70,11 @@ export default class LanguageSwitcher extends Vue {
 
 <style scoped lang="scss">
 .switcher {
-  &-label {
+  &__icon {
+    margin: 0 0 0 5px;
+  }
+
+  &__label {
     font-weight: 600;
 
     &._full {
@@ -77,6 +95,11 @@ export default class LanguageSwitcher extends Vue {
   ::v-deep {
     .btn-link {
       color: $white;
+      font-size: $font-size-sm;
+    }
+
+    .dropdown-menu {
+      font-size: $font-size-sm;
     }
   }
 }

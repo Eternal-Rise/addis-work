@@ -1,20 +1,20 @@
 <template>
   <div class="page-container">
-    <layout-header />
+    <l-header />
     <nuxt />
-    <layout-footer />
+    <!-- <l-footer /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import LayoutFooter from '~/components/layout/layout-footer.vue';
-import LayoutHeader from '~/components/layout/layout-header.vue';
+import lFooter from '~/components/layout/l-footer.vue';
+import lHeader from '~/components/layout/l-header.vue';
 
 @Component({
   components: {
-    LayoutFooter,
-    LayoutHeader,
+    lFooter,
+    lHeader,
   },
 })
 export default class Default extends Vue {}
