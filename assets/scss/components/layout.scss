@@ -1,4 +1,4 @@
 .inner {
   margin: auto;
-  max-width: $lg;
+  max-width: $lg - $spacer * 6;
 }

@@ -1,9 +1,9 @@
 <template>
   <footer class="addis-footer">
-    <h3 class="font-weight-bold mb-2">
+    <h2 class="font-weight-bold mb-2 text-capitalize">
       {{ $t('LABEL_CONTACT_US') }}
-    </h3>
-    <address class="addis-footer__address mb-3">
+    </h2>
+    <address class="addis-footer__address mb-4">
       <p class="addis-footer__address-item">
         {{ $t('LABEL_CONTACT_LOCATION') }}
       </p>
@@ -62,9 +62,14 @@ export default class LayoutFooter extends Vue {}
 .addis-footer {
   background-color: $black;
   color: $white;
+  flex: 1;
   margin: auto 0 0;
-  padding: $spacer * 5 $spacer;
+  padding: $spacer * 4.6 $spacer / 2 $spacer * 5.5;
   text-align: center;
+
+  @include bp($sm) {
+    padding: $spacer * 4.9 $spacer $spacer * 6;
+  }
 }
 
 .addis-socials {
@@ -73,7 +78,7 @@ export default class LayoutFooter extends Vue {}
 
   &__link {
     color: $white;
-    margin: 0 $spacer / 2;
+    margin: 0 $spacer / 1.5;
     transition: 0.2s;
 
     &:hover,

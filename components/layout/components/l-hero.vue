@@ -32,12 +32,13 @@ export default class LandingHero extends Vue {}
         rgba(4, 20, 39, 0) 100%
       ),
       url('~assets/img/hero.jpg');
+    padding: $spacer * 8.75 $spacer $spacer * 6;
   }
 
   @include bp($xl) {
     height: 100vh;
     min-height: $md;
-    max-height: $lg;
+    max-height: $lg - $spacer * 4;
   }
 }
 </style>

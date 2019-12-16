@@ -17,11 +17,11 @@ export default class LCard extends Vue {}
   border-radius: 8px;
   color: $white;
   margin: auto;
-  max-width: 430px;
-  padding: $spacer $spacer / 2;
+  max-width: 432px;
+  padding: $spacer $spacer / 2 $spacer * 1.5;
 
   @include bp($sm) {
-    padding: $spacer $spacer * 2.5;
+    padding: $spacer $spacer * 2.5 $spacer * 1.5;
   }
 
   @include bp($xxl) {

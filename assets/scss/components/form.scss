@@ -1,0 +1,41 @@
+.addis-form {
+  &__checkbox {
+    font-size: $font-size-sm;
+    padding-left: 1.6rem;
+
+    &.custom-control {
+      min-height: initial;
+    }
+
+    .custom-control-input {
+      &:checked ~ .custom-control-label {
+        &::before {
+          background-color: $primary;
+        }
+      }
+    }
+    .custom-control-label {
+      &::before,
+      &::after {
+        border-radius: 0;
+        height: 14px;
+        left: -1.6rem;
+        top: 45%;
+        transform: translateY(-50%);
+        width: 14px;
+      }
+
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+  }
+
+  .form-group {
+    margin-bottom: $spacer;
+  }
+}

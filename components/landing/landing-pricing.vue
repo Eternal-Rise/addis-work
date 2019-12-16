@@ -1,10 +1,10 @@
 <template>
   <section class="addis-pricing">
-    <h3
-      class="addis-pricing__title font-weight-bold text-center text-capitalize"
+    <h2
+      class="addis-pricing__title font-weight-bold text-center text-capitalize mb-6"
     >
       {{ $t('TITLE_LANDING_PRICING') }}
-    </h3>
+    </h2>
 
     <div class="addis-pricing__list">
       <div
@@ -20,7 +20,7 @@
         </header>
         <div class="addis-pricing__item-body">
           <div
-            class="addis-pricing__text mb-3"
+            class="addis-pricing__text mb-4"
             v-html="$t(`LABEL_PRICING_${i}`)"
           ></div>
           <div class="addis-pricing__price">
@@ -49,10 +49,10 @@ export default class LandingPricing extends Vue {}
 .addis-pricing {
   $this: &;
   background-color: $light;
-  padding: $spacer * 4 $spacer;
+  padding: $spacer * 4 $spacer $spacer * 4;
 
-  &__title {
-    margin: 0 0 $spacer * 2;
+  @include bp($lg) {
+    padding: $spacer * 4.5 $spacer $spacer * 4;
   }
 
   &__list {
@@ -72,23 +72,23 @@ export default class LandingPricing extends Vue {}
     }
 
     @include bp($xl) {
-      max-width: $xl;
+      max-width: $xl - $spacer * 2.5;
     }
   }
 
   &__item {
     border-radius: $border-radius-lg;
     box-shadow: 0 0 $spacer / 2 $gray-300;
-    margin-bottom: $spacer * 1.4;
+    margin: 0 0 $spacer * 1.2;
     text-align: center;
 
     @include bp($md) {
-      width: calc(50% - 20px);
       margin: 0 $spacer / 2 $spacer;
+      width: calc(50% - #{$spacer});
     }
 
     @include bp($xl) {
-      width: calc(25% - 20px);
+      width: calc(25% - #{$spacer});
     }
 
     &._primary {
@@ -106,7 +106,7 @@ export default class LandingPricing extends Vue {}
   &__item-body {
     background-color: $white;
     border-radius: 0 0 $border-radius-lg $border-radius-lg;
-    padding: $spacer * 2 $spacer $spacer * 1.5;
+    padding: $spacer * 2 $spacer $spacer * 1.6;
   }
 
   &__item-header {
@@ -125,7 +125,7 @@ export default class LandingPricing extends Vue {}
   &__price {
     color: $primary;
     font-weight: 600;
-    margin-bottom: $spacer * 1.3;
+    margin-bottom: $spacer * 1.1;
     font-size: $font-size-lg * 1.2;
   }
 

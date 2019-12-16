@@ -1,10 +1,10 @@
 <template>
-  <l-card class="login">
-    <h3 class="font-weight-bold mb-3 text-center">
-      {{ $t('TITLE_LANDING_SIGN_IN') }}
-    </h3>
-    <p class="login__description text-center mb-4">
-      {{ $t('MESSAGE_INFO_LANDING_SIGN_IN') }}
+  <l-card>
+    <h2 class="font-weight-bold text-center">
+      {{ $t('TITLE_JOB_SEEKER_SIGN_IN') }}
+    </h2>
+    <p class="login__description mb-4 mb-lg-3 text-center">
+      {{ $t('MESSAGE_INFO_JOB_SEEKER_SIGN_IN') }}
     </p>
 
     <b-form class="addis-form" @submit.prevent="handleSubmit">
@@ -16,7 +16,7 @@
           type="tel"
         />
       </b-form-group>
-      <b-form-group class="mb-4">
+      <b-form-group class="mb-5">
         <b-form-input
           :placeholder="$t('PLACEHOLDER_PASSWORD')"
           class="addis-form__input"
@@ -27,7 +27,7 @@
       <b-button
         type="submit"
         variant="primary"
-        class="addis-btn _primary mb-2 w-100"
+        class="addis-btn _primary addis-form__submit w-100"
       >
         {{ $t('LABEL_SIGN_IN') }}
       </b-button>
@@ -42,7 +42,7 @@
         </b-col>
         <b-col class="col-auto">
           <nuxt-link
-            :to="{ name: 'index' }"
+            :to="{ name: 'job-seeker-password-forgot' }"
             class="addis-form__link font-weight-bold"
           >
             {{ $t('LABEL_PASSWORD_FORGOT') }}
@@ -55,7 +55,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import lCard from '~/components/layout/l-card.vue';
+import lCard from '~/components/layout/components/l-card.vue';
 
 @Component({
   components: {
@@ -72,45 +72,14 @@ export default class LandingLogin extends Vue {
 
 <style lang="scss" scoped>
 .login {
-  padding-bottom: $spacer * 1.5;
-}
-.addis-form {
-  &__checkbox {
-    font-size: $font-size-sm;
-    padding-left: 1.2rem;
-
-    &.custom-control {
-      min-height: initial;
-    }
-
-    ::v-deep {
-      .custom-control-input {
-        &:checked ~ .custom-control-label {
-          &::before {
-            background-color: $primary;
-          }
-        }
-      }
-      .custom-control-label {
-        &::before,
-        &::after {
-          border-radius: 0;
-          height: 14px;
-          left: -1.2rem;
-          top: 45%;
-          transform: translateY(-50%);
-          width: 14px;
-        }
-
-        &::before {
-          background-color: transparent;
-        }
-      }
-    }
+  &__sescription {
+    margin-bottom: $spacer / 1.25;
   }
+}
 
-  &__link {
-    font-size: $font-size-sm;
+.addis-form {
+  &__submit {
+    margin-bottom: $spacer / 1.25;
   }
 }
 </style>

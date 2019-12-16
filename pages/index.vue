@@ -10,6 +10,7 @@ import PageLanding from '~/components/pages/page-landing.vue';
   components: {
     PageLanding,
   },
+  layout: 'landing',
 })
 export default class Index extends Vue {}
 </script>

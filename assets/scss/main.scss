@@ -2,7 +2,9 @@
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
 @import './fonts';
-@import './reset';
+
+@import './reset/default.scss';
 
 @import './components/buttons.scss';
+@import './components/form.scss';
 @import './components/layout.scss';

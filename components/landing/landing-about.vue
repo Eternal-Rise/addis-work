@@ -1,8 +1,8 @@
 <template>
   <section class="addis-about">
-    <h3 class="font-weight-bold text-capitalize text-center mb-4">
+    <h2 class="font-weight-bold text-capitalize text-center mb-5">
       {{ $t('TITLE_LANDING_ABOUT') }}
-    </h3>
+    </h2>
     <p v-html="$t('MESSAGE_INFO_LANDING_ABOUT')"></p>
   </section>
 </template>
@@ -17,7 +17,11 @@ export default class LandingAbout extends Vue {}
 <style lang="scss" scoped>
 .addis-about {
   margin: 0 auto;
-  max-width: 680px;
-  padding: $spacer * 3.5 $spacer;
+  max-width: $md - $spacer * 2.1;
+  padding: $spacer * 3 $spacer $spacer * 3.5;
+
+  @include bp($lg) {
+    padding: $spacer * 4.5 $spacer $spacer * 4;
+  }
 }
 </style>

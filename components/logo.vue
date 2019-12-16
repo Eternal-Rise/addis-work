@@ -1,10 +1,10 @@
 <template>
-  <div class="logo">
+  <nuxt-link :to="{ name: 'index' }" class="logo">
     <img v-if="false" src="/" alt="logo" />
     <span class="logo__alt">
       addis work
     </span>
-  </div>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
@@ -16,6 +16,16 @@ export default class Logo extends Vue {}
 
 <style lang="scss" scoped>
 .logo {
+  color: $white;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $white;
+    text-decoration: none;
+  }
+
   &__alt {
     font-size: 18px;
     font-weight: 600;
