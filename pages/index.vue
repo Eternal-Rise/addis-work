@@ -14,5 +14,4 @@ import PageLanding from '~/components/pages/page-landing.vue';
 export default class Index extends Vue {}
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

@@ -23,5 +23,9 @@ export default class LCard extends Vue {}
   @include bp($sm) {
     padding: $spacer $spacer * 2.5;
   }
+
+  @include bp($xxl) {
+    max-width: 500px;
+  }
 }
 </style>

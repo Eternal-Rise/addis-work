@@ -1,9 +1,9 @@
 <template>
   <l-card class="login">
-    <h4 class="font-weight-bold mb-3 text-center">
+    <h3 class="font-weight-bold mb-3 text-center">
       {{ $t('TITLE_LANDING_SIGN_IN') }}
-    </h4>
-    <p class="login__description text-center mb-3">
+    </h3>
+    <p class="login__description text-center mb-4">
       {{ $t('MESSAGE_INFO_LANDING_SIGN_IN') }}
     </p>
 
@@ -72,14 +72,11 @@ export default class LandingLogin extends Vue {
 
 <style lang="scss" scoped>
 .login {
-  &__description {
-    font-size: $font-size-sm;
-  }
+  padding-bottom: $spacer * 1.5;
 }
-
 .addis-form {
   &__checkbox {
-    font-size: $font-size-xs;
+    font-size: $font-size-sm;
     padding-left: 1.2rem;
 
     &.custom-control {
@@ -112,7 +109,6 @@ export default class LandingLogin extends Vue {
     }
   }
 
-  &__input,
   &__link {
     font-size: $font-size-sm;
   }

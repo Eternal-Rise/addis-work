@@ -71,7 +71,7 @@ export default class LanguageSwitcher extends Vue {
 <style scoped lang="scss">
 .switcher {
   &__icon {
-    margin: 0 0 0 5px;
+    margin: 0 0 2px 5px;
   }
 
   &__label {
@@ -95,11 +95,6 @@ export default class LanguageSwitcher extends Vue {
   ::v-deep {
     .btn-link {
       color: $white;
-      font-size: $font-size-sm;
-    }
-
-    .dropdown-menu {
-      font-size: $font-size-sm;
     }
   }
 }

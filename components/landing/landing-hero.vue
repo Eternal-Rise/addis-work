@@ -33,5 +33,11 @@ export default class LandingHero extends Vue {}
       ),
       url('~assets/img/hero.jpg');
   }
+
+  @include bp($xl) {
+    height: 100vh;
+    min-height: $md;
+    max-height: $lg;
+  }
 }
 </style>

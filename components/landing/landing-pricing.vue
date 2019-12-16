@@ -1,0 +1,136 @@
+<template>
+  <section class="addis-pricing">
+    <h3
+      class="addis-pricing__title font-weight-bold text-center text-capitalize"
+    >
+      {{ $t('TITLE_LANDING_PRICING') }}
+    </h3>
+
+    <div class="addis-pricing__list">
+      <div
+        v-for="i of [1, 3, 6, 12]"
+        :key="i"
+        :class="i === 6 ? '_primary' : ''"
+        class="addis-pricing__item"
+      >
+        <header class="addis-pricing__item-header">
+          <h5 class="font-weight-bold text-center m-0">
+            {{ i }} {{ i === 1 ? $t('LABEL_MONTH') : $t('LABEL_MONTHS') }}
+          </h5>
+        </header>
+        <div class="addis-pricing__item-body">
+          <div
+            class="addis-pricing__text mb-3"
+            v-html="$t(`LABEL_PRICING_${i}`)"
+          ></div>
+          <div class="addis-pricing__price">
+            {{ $t(`LABEL_PRICING_PRICE_${i}`) }}
+          </div>
+          <b-button
+            class="addis-btn _primary addis-pricing__btn"
+            variant="primary"
+          >
+            {{ $t('LABEL_SIGN_UP') }}
+          </b-button>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component
+export default class LandingPricing extends Vue {}
+</script>
+
+<style lang="scss" scoped>
+.addis-pricing {
+  $this: &;
+  background-color: $light;
+  padding: $spacer * 4 $spacer;
+
+  &__title {
+    margin: 0 0 $spacer * 2;
+  }
+
+  &__list {
+    margin: auto;
+    max-width: 270px;
+
+    @include bp($md) {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: initial;
+      margin: 0 -$spacer / 2;
+    }
+
+    @include bp($lg) {
+      max-width: $md;
+      margin: 0 auto;
+    }
+
+    @include bp($xl) {
+      max-width: $xl;
+    }
+  }
+
+  &__item {
+    border-radius: $border-radius-lg;
+    box-shadow: 0 0 $spacer / 2 $gray-300;
+    margin-bottom: $spacer * 1.4;
+    text-align: center;
+
+    @include bp($md) {
+      width: calc(50% - 20px);
+      margin: 0 $spacer / 2 $spacer;
+    }
+
+    @include bp($xl) {
+      width: calc(25% - 20px);
+    }
+
+    &._primary {
+      #{$this}__item-body {
+        box-shadow: inset 0 0 0 1px $primary;
+      }
+
+      #{$this}__item-header {
+        background-color: $primary;
+        box-shadow: inset 0 0 0 1px $primary;
+      }
+    }
+  }
+
+  &__item-body {
+    background-color: $white;
+    border-radius: 0 0 $border-radius-lg $border-radius-lg;
+    padding: $spacer * 2 $spacer $spacer * 1.5;
+  }
+
+  &__item-header {
+    background-color: $dark;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    color: $white;
+    padding: $spacer 0;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    width: 160px;
+  }
+
+  &__price {
+    color: $primary;
+    font-weight: 600;
+    margin-bottom: $spacer * 1.3;
+    font-size: $font-size-lg * 1.2;
+  }
+
+  &__text {
+    font-size: $font-size-lg;
+  }
+}
+</style>

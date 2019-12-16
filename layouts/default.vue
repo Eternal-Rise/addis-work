@@ -2,7 +2,7 @@
   <div class="page-container">
     <l-header />
     <nuxt />
-    <!-- <l-footer /> -->
+    <l-footer />
   </div>
 </template>
 

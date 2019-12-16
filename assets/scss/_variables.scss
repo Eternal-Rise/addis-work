@@ -14,9 +14,9 @@ $xxxl: 2400px;
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-
 $white:    #fff;
 $gray-200: #E8EAEE;
+$gray-300: #D4DAE2;
 $gray-900: #041427;
 $black:    #000;
 
@@ -25,6 +25,14 @@ $red:     #F26463;
 $primary:       $red;
 $light:         $gray-200;
 $dark:          $gray-900;
+
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-radius-lg: .5rem;
+
 
 // Typography
 //
@@ -37,6 +45,9 @@ $font-size-base:  1rem; // Assumes the browser default, typically `16px`
 $font-size-lg:    $font-size-base * 1.25;
 $font-size-sm:    $font-size-base * .8;
 $font-size-xs:    $font-size-base * .7;
+
+$h3-font-size: $font-size-base * 1.875;
+
 
 // Spacing
 //

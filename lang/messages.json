@@ -13,12 +13,29 @@
     "LABEL_PASSWORD_FORGOT": "Forgot password?",
     "LABEL_SIGN_IN": "sign in",
     "LABEL_SIGN_UP": "sign up",
+    "LABEL_PRICING_1": "Our <b>basic</b> package",
+    "LABEL_PRICING_3": "<b>10%</b> discount",
+    "LABEL_PRICING_6": "<b>One month</b> on us ",
+    "LABEL_PRICING_12": "<b>Two months</b> on us",
+    "LABEL_PRICING_PRICE_1": "ETB 50",
+    "LABEL_PRICING_PRICE_3": "ETB 140",
+    "LABEL_PRICING_PRICE_6": "ETB 260",
+    "LABEL_PRICING_PRICE_12": "ETB 500",
+    "LABEL_MONTH": "Month",
+    "LABEL_MONTHS": "Months",
 
+    "MESSAGE_INFO_LANDING_ABOUT": "Our vision is to create a system that will allow anyone with a mobile phone to receive new vacancies on their phone via SMS. <b>There are 17 million jobs seekers in Ethiopia having 200,000 new professional job seekers added to this number.</b> The current way of delivering these vacancies is via news papers and through Internet. In a country where the largest newspaper is only 10,000 pieces printed and mobile Internet penetration is only 16% it's very difficult for job seekers to get notified of new jobs on time.<br/><br/><b>Addis Work will solve this problem by delivering vacancy announcements via text. You get notified in real time because of the seamless integration of our software with Ethio Telecom.</b>",
     "MESSAGE_INFO_LANDING_SIGN_IN": "Get notified by SMS on your preferred job categories. No need to go out looking for jobs, the jobs come looking for you on your mobile. You can even apply right away by SMS",
+    "MESSAGE_INFO_LINK_FACEBOOK": "Link to our Facebook",
+    "MESSAGE_INFO_LINK_INSTAGRAM": "Link to our Instagram",
+    "MESSAGE_INFO_LINK_TWITTER": "Link to our Twitter",
+
 
     "PLACEHOLDER_PASSWORD": "Password",
     "PLACEHOLDER_PHONE": "Phone",
 
+    "TITLE_LANDING_ABOUT": "About Us",
+    "TITLE_LANDING_PRICING": "Pricing",
     "TITLE_LANDING_SIGN_IN": "The right vacancies by SMS!"
   },
   "om": {

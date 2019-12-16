@@ -1,11 +1,13 @@
 <template>
   <header class="addis-header">
-    <logo />
-    <div class="addis-header__wrapp">
-      <lang-switcher class="addis-header__lang-switcher" />
-      <b-button variant="outline-primary" class="addis-btn">
-        {{ $t('LABEL_SIGN_UP') }}
-      </b-button>
+    <div class="inner addis-header__inner">
+      <logo />
+      <div class="addis-header__wrapp">
+        <lang-switcher class="addis-header__lang-switcher" />
+        <b-button variant="outline-primary" class="addis-btn">
+          {{ $t('LABEL_SIGN_UP') }}
+        </b-button>
+      </div>
     </div>
   </header>
 </template>
@@ -26,15 +28,18 @@ export default class LayoutHeader extends Vue {}
 
 <style lang="scss" scoped>
 .addis-header {
-  align-items: center;
   background-color: rgba($dark, 0.8);
   color: $white;
-  display: flex;
   left: 0;
   padding: 12px 20px;
   position: absolute;
   right: 0;
   top: 0;
+
+  &__inner {
+    align-items: center;
+    display: flex;
+  }
 
   &__wrapp {
     margin: 0 0 0 auto;
