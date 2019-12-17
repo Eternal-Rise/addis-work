@@ -19,7 +19,7 @@ export default class LandingHero extends Vue {}
       rgba(4, 20, 39, 0) 100%
     ),
     url('~assets/img/hero-sm.jpg');
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;

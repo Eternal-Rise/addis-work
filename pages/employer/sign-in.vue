@@ -1,19 +1,19 @@
 <template>
   <l-card>
     <h2 class="font-weight-bold text-center">
-      {{ $t('TITLE_JOB_SEEKER_SIGN_IN') }}
+      {{ $t('TITLE_EMPLOYER_SIGN_IN') }}
     </h2>
     <p class="mb-4 mb-lg-3 text-center">
-      {{ $t('MESSAGE_INFO_JOB_SEEKER_SIGN_IN') }}
+      {{ $t('MESSAGE_INFO_EMPLOYER_SIGN_IN') }}
     </p>
 
     <b-form class="addis-form" @submit.prevent="handleSubmit">
       <b-form-group>
         <b-form-input
-          :placeholder="$t('PLACEHOLDER_PHONE')"
+          :placeholder="$t('PLACEHOLDER_EMAIL')"
           class="addis-form__input"
           required
-          type="tel"
+          type="email"
         />
       </b-form-group>
       <b-form-group class="mb-5">
@@ -42,7 +42,7 @@
         </b-col>
         <b-col class="col-auto">
           <nuxt-link
-            :to="{ name: 'job-seeker-password-forgot' }"
+            :to="{ name: 'employer-password-forgot' }"
             class="addis-form__link font-weight-bold"
           >
             {{ $t('LABEL_PASSWORD_FORGOT') }}

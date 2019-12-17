@@ -81,6 +81,8 @@ export default class LandingPricing extends Vue {}
     box-shadow: 0 0 $spacer / 2 $gray-300;
     margin: 0 0 $spacer * 1.2;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 
     @include bp($md) {
       margin: 0 $spacer / 2 $spacer;
@@ -107,6 +109,9 @@ export default class LandingPricing extends Vue {}
     background-color: $white;
     border-radius: 0 0 $border-radius-lg $border-radius-lg;
     padding: $spacer * 2 $spacer $spacer * 1.6;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   &__item-header {
@@ -125,7 +130,7 @@ export default class LandingPricing extends Vue {}
   &__price {
     color: $primary;
     font-weight: 600;
-    margin-bottom: $spacer * 1.1;
+    margin: auto 0 $spacer * 1.1;
     font-size: $font-size-lg * 1.2;
   }
 
