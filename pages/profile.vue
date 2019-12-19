@@ -33,13 +33,14 @@
         >
           <input
             id="categories-switcher"
-            class="categories__switcher d-none"
+            class="categories__switcher"
             type="checkbox"
           />
           <label
             for="categories-switcher"
-            :class="!form.categories.length ? '_has_placeholder' : ''"
-            class="categories__switcher-label"
+            tabindex="0"
+            :class="!form.categories.length ? '_has-placeholder' : ''"
+            class="categories__switcher-label custom-select"
           >
             <template v-if="!form.categories.length">
               {{ $t('PLACEHOLDER_SELECT') }}
@@ -53,6 +54,7 @@
                 {{
                   $t(`LABEL_CATEGORY_${category.category}_${category.title}`)
                 }}
+                {{ index < form.categories.length - 1  ? ',' : '' }}
               </span>
             </template>
           </label>
@@ -423,7 +425,7 @@
         <b-form-group :label="$t('LABEL_ATTACH_CV')">
           <!-- <input type="file" id="cv" class="d-none" :accept="acceptCV"> -->
           <b-form-file id="cv" :accept="acceptCV" class="d-none" />
-          <label for="cv" class="addis-btn _outline btn-upload">
+          <label for="cv" class="addis-btn _outline btn-upload" tabindex="0">
             {{ $t('LABEL_UPLOAD') }}
           </label>
         </b-form-group>
@@ -434,14 +436,14 @@
             :accept="acceptRelevantDocuments"
             class="d-none"
           />
-          <label for="docs" class="addis-btn _outline btn-upload">
+          <label for="docs" class="addis-btn _outline btn-upload" tabindex="0">
             {{ $t('LABEL_UPLOAD') }}
           </label>
         </b-form-group>
 
         <b-form-group :label="$t('LABEL_ATTACH_PHOTO')">
           <b-form-file id="photo" :accept="acceptPhoto" class="d-none" />
-          <label for="photo" class="addis-btn _outline btn-upload">
+          <label for="photo" class="addis-btn _outline btn-upload" tabindex="0">
             {{ $t('LABEL_UPLOAD') }}
           </label>
         </b-form-group>
@@ -748,6 +750,31 @@ export default class Profile extends Vue {
 
   &__text {
     text-decoration: underline;
+  }
+}
+
+.categories {
+  $this: &;
+  &__switcher {
+    display: none;
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0;
+    border:0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+
+    &:checked ~ #{$this}__list {
+      display: block;
+    }
+  }
+
+  // &__switcher-label {
+  // }
+
+  &__list {
+    display: none;
   }
 }
 
