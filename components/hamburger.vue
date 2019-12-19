@@ -1,11 +1,5 @@
 <template>
-  <svg
-    :class="isActive ? 'active' : ''"
-    class="ham hamRotate ham8 d-lg-none"
-    viewBox="0 0 100 100"
-    width="40"
-    @click="toggleActive"
-  >
+  <svg class="ham hamRotate d-lg-none" viewBox="0 0 100 100" width="40">
     <path
       class="line top"
       d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
@@ -41,12 +35,40 @@ export default class Hamburger extends Vue {
   -ms-user-select: none;
   user-select: none;
   transform: scale(1.5, 1);
-}
-.hamRotate.active {
-  transform: rotate(45deg);
-}
-.hamRotate180.active {
-  transform: rotate(180deg);
+
+  &._active {
+    &.hamRotate {
+      transform: rotate(45deg);
+    }
+    &.hamRotate180 {
+      transform: rotate(180deg);
+    }
+
+    .top {
+      stroke-dashoffset: -64px;
+    }
+    .middle {
+      //stroke-dashoffset: -20px;
+      transform: rotate(90deg);
+    }
+    .bottom {
+      stroke-dashoffset: -64px;
+    }
+  }
+
+  .top {
+    stroke-dasharray: 40 160;
+  }
+  .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+  }
+  .bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+  }
 }
 .line {
   fill: none;
@@ -54,28 +76,5 @@ export default class Hamburger extends Vue {
   stroke: $white;
   stroke-width: 4;
   stroke-linecap: round;
-}
-.ham8 .top {
-  stroke-dasharray: 40 160;
-}
-.ham8 .middle {
-  stroke-dasharray: 40 142;
-  transform-origin: 50%;
-  transition: transform 400ms;
-}
-.ham8 .bottom {
-  stroke-dasharray: 40 85;
-  transform-origin: 50%;
-  transition: transform 400ms, stroke-dashoffset 400ms;
-}
-.ham8.active .top {
-  stroke-dashoffset: -64px;
-}
-.ham8.active .middle {
-  //stroke-dashoffset: -20px;
-  transform: rotate(90deg);
-}
-.ham8.active .bottom {
-  stroke-dashoffset: -64px;
 }
 </style>

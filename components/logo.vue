@@ -18,6 +18,7 @@ export default class Logo extends Vue {}
 .logo {
   color: $white;
   text-decoration: none;
+  padding: $spacer - 5px 0;
 
   &:hover,
   &:active,

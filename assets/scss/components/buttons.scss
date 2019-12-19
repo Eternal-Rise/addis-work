@@ -1,21 +1,32 @@
 .addis-btn {
-  background-color: $white;
+  background-color: $white !important;
   font-size: $font-size-sm;
   font-weight: 600;
   letter-spacing: 1px;
   padding: 7px 14px;
+  text-decoration: none;
   text-transform: uppercase;
+  transition: .2s;
 
-  &:hover {
-    background-color: $primary;
+  &:hover,
+  &:focus {
+    opacity: .5;
+    text-decoration: none;
+  }
+
+  &._light {
+    background-color: rgba($white, .3) !important;
+    border-color: transparent !important;
+    color: $white !important;
   }
 
   &._primary {
-    background-color: $primary;
+    background-color: $primary !important;
+  }
 
-    &:hover {
-      background-color: $white;
-      color: $primary;
-    }
+  &._outline {
+    background-color: $white !important;
+    border-color: $primary !important;
+    color: $primary !important;
   }
 }

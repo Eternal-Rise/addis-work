@@ -1,4 +1,14 @@
 .addis-form {
+  transition: .2s;
+
+  &._fixed-width {
+    max-width: $sm - $spacer * 8;
+  }
+
+  &._loading {
+    opacity: .5;
+  }
+
   &__checkbox {
     font-size: $font-size-sm;
     padding-left: 1.6rem;

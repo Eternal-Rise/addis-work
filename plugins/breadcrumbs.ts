@@ -47,7 +47,7 @@ class BreadcrumbsPlugin {
   set(): void {
     const breadcrumbs: Breadcrumb[] = [];
 
-    breadcrumbs.push({ title: 'LABEL_DASHBOARD', to: '/' });
+    breadcrumbs.push({ title: 'LABEL_HOME_PAGE', to: { name: 'index' } });
 
     const router = this.context.app.router;
 

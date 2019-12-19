@@ -1,5 +1,5 @@
 <template>
-  <b-dropdown class="switcher" no-caret variant="link">
+  <b-dropdown class="switcher" no-caret variant="link" right>
     <template slot="button-content">
       <div class="d-flex align-items-center">
         <span class="switcher__label _full">
@@ -95,6 +95,7 @@ export default class LanguageSwitcher extends Vue {
   ::v-deep {
     .btn-link {
       color: $white;
+      padding: $spacer - 3px $spacer / 2;
     }
   }
 }

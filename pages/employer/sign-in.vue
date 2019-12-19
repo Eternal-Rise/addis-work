@@ -1,6 +1,6 @@
 <template>
-  <l-card>
-    <h2 class="font-weight-bold text-center">
+  <l-card class="_dark _fixed-width">
+    <h2 class="font-weight-bold text-center px-3">
       {{ $t('TITLE_EMPLOYER_SIGN_IN') }}
     </h2>
     <p class="mb-4 mb-lg-3 text-center">

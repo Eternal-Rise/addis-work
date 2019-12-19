@@ -26,12 +26,14 @@
           <div class="addis-pricing__price">
             {{ $t(`LABEL_PRICING_PRICE_${i}`) }}
           </div>
-          <b-button
-            class="addis-btn _primary addis-pricing__btn"
-            variant="primary"
-          >
-            {{ $t('LABEL_SIGN_UP') }}
-          </b-button>
+          <nuxt-link :to="{ name: 'sign-up' }" style="text-decoration: none">
+            <b-button
+              class="addis-btn _primary addis-pricing__btn"
+              variant="primary"
+            >
+              {{ $t('LABEL_SIGN_UP') }}
+            </b-button>
+          </nuxt-link>
         </div>
       </div>
     </div>

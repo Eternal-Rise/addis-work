@@ -1,0 +1,52 @@
+// LABEL
+.col-form-label {
+  font-weight: 600;
+  margin: 0 0 $spacer / 2;
+  padding: 0;
+}
+
+// CHECKBOX
+.custom-checkbox,
+.custom-radio {
+  .custom-control-label {
+    &::before {
+      border-color: $gray-400;
+    }
+    &::before,
+    &::after {
+      top: 45%;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+// RADIO
+.custom-radio {
+  margin-bottom: $spacer / 4;
+
+  .custom-control-input:checked {
+    ~ .custom-control-label {
+      &::before {
+        background-color: $white;
+        border-color: $gray-400;
+      }
+      &::after {
+        background-image: radial-gradient($primary 70%, transparent 70%);
+      }
+    }
+  }
+}
+
+// SELECT
+.custom-select {
+  background-color: $white;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20viewBox%3D%220%200%2010%206%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M10%200.513146C10%200.625817%209.9583%200.739662%209.87489%200.834728L5.43216%205.80869C5.324%205.92958%205.16109%206%204.98776%206C4.81573%206%204.65153%205.92958%204.54466%205.80869L0.125395%200.855854C-0.071393%200.635206%20-0.0322952%200.31245%200.212712%200.135228C0.457721%20-0.0419949%200.816109%20-0.00678518%201.0129%200.213863L4.98906%204.66907L8.98739%200.191563C9.18418%20-0.0290848%209.54256%20-0.0642945%209.78757%200.112928C9.92702%200.215036%2010%200.362917%2010%200.513146Z%22%20fill%3D%22rgb%28132%2C139%2C153%29%22%2F%3E%3C%2Fsvg%3E%0A');
+
+  &._has-placeholder {
+    color: $gray-600;
+  }
+
+  option {
+    color: $dark;
+  }
+}

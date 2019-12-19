@@ -24,6 +24,8 @@ export default class Hero extends Vue {}
 .hero {
   align-items: center;
   display: flex;
+  height: 100vh;
+  max-height: $md - $spacer * 5;
 
   @include bp($sm) {
     padding: $spacer * 6.5 $spacer $spacer * 3;
@@ -31,7 +33,6 @@ export default class Hero extends Vue {}
 
   @include bp($xl) {
     min-height: $sm;
-    max-height: $md - $spacer * 5;
   }
 
   @include bp($xxl) {
