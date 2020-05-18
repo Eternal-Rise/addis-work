@@ -10,7 +10,7 @@ import { Breadcrumb } from '~/types/breadcrumb';
 import { Context } from '@nuxt/types';
 
 declare type ComponentWithOptions = Component & {
-  options: { [key: string]: any };
+  options: { [key: string]: any; };
 };
 
 declare module 'vue/types/vue' {
@@ -55,7 +55,7 @@ class BreadcrumbsPlugin {
       const to: RawLocation = {};
 
       if (router) {
-        to.name = router.resolve(value.path).resolved.name;
+        to.name = router.resolve(value.path).resolved.name as string;
         to.params = this.context.route.params;
       } else {
         to.path = value.path;

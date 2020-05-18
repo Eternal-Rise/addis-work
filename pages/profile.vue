@@ -26,7 +26,7 @@
         {{ $t('TITLE_GREETINGS', { userName: 'Manuel' }) }}
       </h4>
 
-      <b-form class="addis-form _fixed-width">
+      <b-form class="addis-form _fixed-width" @submit.prevent="handleSubmit">
         <b-form-group
           :label="$t('LABEL_SELECT_JOB_CATEGORIES')"
           class="categories"
@@ -54,12 +54,16 @@
                 {{
                   $t(`LABEL_CATEGORY_${category.category}_${category.title}`)
                 }}
-                {{ index < form.categories.length - 1  ? ',' : '' }}
+                {{ form.categories.length - 1 > index ? ', ' : '' }}
               </span>
             </template>
           </label>
           <div class="categories__list">
-            <div v-for="(category, i) of categories" :key="i">
+            <div
+              v-for="(category, i) of categories"
+              :key="i"
+              class="categories__group"
+            >
               <div class="col-form-label">
                 {{ $t(`LABEL_CATEGORY_${category.title}`) }}
               </div>
@@ -67,7 +71,16 @@
                 <b-form-checkbox
                   v-for="(subCategory, j) of category.list"
                   :key="j"
-                  :value="{ category: category.title, title: subCategory }"
+                  :disabled="
+                    form.categories.length > 2 &&
+                      !isSelectedCategory(`${category.title}-${j}`)
+                  "
+                  :value="{
+                    id: `${category.title}-${j}`,
+                    category: category.title,
+                    title: subCategory,
+                  }"
+                  class="mb-1"
                 >
                   {{ $t(`LABEL_CATEGORY_${category.title}_${subCategory}`) }}
                 </b-form-checkbox>
@@ -642,6 +655,10 @@ export default class Profile extends Vue {
     } else return true;
   }
 
+  isSelectedCategory(id: string): boolean {
+    return this.form.categories.some((e: any) => e.id === id);
+  }
+
   addFields(key: string) {
     switch (key) {
       case 'certificate':
@@ -689,6 +706,11 @@ export default class Profile extends Vue {
       lastWorkplace.endMonth = null;
       lastWorkplace.endYear = null;
     }
+  }
+
+  // TODO: ability to save profile
+  handleSubmit() {
+    //
   }
 
   created() {
@@ -755,12 +777,14 @@ export default class Profile extends Vue {
 
 .categories {
   $this: &;
+  position: relative;
+
   &__switcher {
     display: none;
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
-    padding:0;
-    border:0;
+    padding: 0;
+    border: 0;
     height: 1px;
     width: 1px;
     overflow: hidden;
@@ -770,11 +794,44 @@ export default class Profile extends Vue {
     }
   }
 
-  // &__switcher-label {
-  // }
+  &__switcher-label {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
   &__list {
+    background-color: $white;
+    border-radius: 0.25rem;
+    border: 1px solid $gray-200;
+    bottom: 10px;
     display: none;
+    height: 80vh;
+    max-height: $sm;
+    overflow: auto;
+    padding: 0.5rem 1.75rem 0.375rem 0.75rem;
+    position: absolute;
+    transform: translate(0, 100%);
+    z-index: 10;
+
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+  }
+
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: $spacer * 1.2;
+    }
   }
 }
 
