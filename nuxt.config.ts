@@ -1,6 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import { Configuration } from '@nuxt/types';
 import i18n from './configs/i18n.config';
+
+const isDev = process.env.NODE_ENV === 'development';
+
 const config: Configuration = async (): Promise<Configuration> => ({
   mode: 'universal',
   /*
@@ -71,11 +74,8 @@ const config: Configuration = async (): Promise<Configuration> => ({
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    host:
-      process.env.NODE_ENV === 'development'
-        ? 'localhost'
-        : 'api.addis-work.softrize.com',
-    port: process.env.NODE_ENV === 'development' ? '3000' : '80',
+    host: 'localhost',
+    port: 3000,
     https: true,
     credentials: false,
   },
@@ -83,6 +83,7 @@ const config: Configuration = async (): Promise<Configuration> => ({
   i18n: await i18n(),
 
   router: {
+    base: isDev ? '/' : '/addis-work/',
     middleware: ['breadcrumbs' /*, 'navigation', 'auth'*/],
   },
 

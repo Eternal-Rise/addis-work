@@ -5,12 +5,13 @@
   "author": "Softrize",
   "private": true,
   "scripts": {
-    "dev": "nuxt-ts",
     "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
+    "deploy": "bash deploy.sh",
+    "dev": "nuxt-ts",
     "generate": "nuxt-ts generate",
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js,.vue,.ts --ignore-path .gitignore ."
+    "lintfix": "eslint --fix --ext .js,.vue,.ts --ignore-path .gitignore .",
+    "start": "nuxt-ts start"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
