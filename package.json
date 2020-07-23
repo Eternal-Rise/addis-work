@@ -22,7 +22,7 @@
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/style-resources": "^1.0.0",
     "@types/enquire.js": "^2.1.2",
-    "@types/lodash": "^4.14.151",
+    "@types/lodash": "^4.14.158",
     "@typescript-eslint/parser": "^2.33.0",
     "bootstrap-vue": "^2.14.0",
     "enquire.js": "^2.1.6",
